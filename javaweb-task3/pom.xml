@@ -11,5 +11,7 @@
 
     <artifactId>javaweb-task3</artifactId>
 
+    <packaging>war</packaging>
+    <description>java web task1</description>
 
 </project>
