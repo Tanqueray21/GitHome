@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-<h2>输入MyWeb/HelloServlet获取更多内容</h2>
+<h2>Test</h2>
 </body>
 </html>

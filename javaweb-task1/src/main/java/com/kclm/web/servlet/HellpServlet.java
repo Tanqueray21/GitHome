@@ -22,12 +22,12 @@ public class HellpServlet implements Servlet {
         System.out.println("Hello Servlet init().....");
         //把容器传进来的ServletConfig赋值和给属性config
         this.config = config;
-        try {
-            System.out.println("模拟等待两秒");
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println("模拟等待两秒");
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override

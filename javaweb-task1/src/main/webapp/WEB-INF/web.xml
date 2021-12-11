@@ -7,13 +7,14 @@
 
     <!--配置一个Servlet-->
     <servlet>
-        <servlet-name>helloServlet</servlet-name>
+        <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.kclm.web.servlet.HellpServlet</servlet-class>
         <!--默认情况下。此servlet是当第一个请求来到时才会被初始化，如果希望在容器启动后就初始化，则需要配置-->
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>helloServlet</servlet-name>
+        <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+
 </web-app>

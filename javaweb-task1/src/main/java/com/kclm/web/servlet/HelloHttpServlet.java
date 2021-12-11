@@ -13,21 +13,48 @@ import java.io.PrintWriter;
  */
 @WebServlet(urlPatterns = {"/MyWeb/HelloServlet"})
 public class HelloHttpServlet extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+//        只执行一次可以用作获取连接池等等
+        System.out.println("HelloHttpServlet的init方法...");
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //获取当前线程
+        String tname = Thread.currentThread().getName();
+        System.out.println("服务线程:" + tname + "浏览器端发送了Get请求");
+
         System.out.println("浏览器端发送了get请求");
         //获取浏览器端得信息，主要是请求的信息
+        String id = req.getParameter("id");
+        System.out.println("请求参数id的值是:"+id);
+
         String name = req.getParameter("name");
         System.out.println("请求参数 name的值是：" + name);
+        String password = req.getParameter("password");
+        System.out.println("请求的参数password的值是:"+password);
+
         //向客户端输出
         resp.setContentType("text/html;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-//        if (name != null) {
-//            writer.println("<h3>你输入的名字是:" + name + "</h3>");
-//        }else{
-//            writer.println("<h2>你没有给定请求参数name</h2>");
-//        }
-        writer.println("欢迎学习Servlet!");
+        if (name != null) {
+            writer.println("<h2>服务线程的名称:" + tname + "</h2><h3>你输入的名字是:" + name + "</h3>");
+        } else {
+            writer.println("<h2>你没有给定请求参数name</h2>");
+        }
+        if (id != null) {
+            writer.println("<h3>你输入的id是:" + id + "</h3>");
+        } else {
+            writer.println("<h2>你没有给定请求参数id</h2>");
+        }
+        if (password != null) {
+            writer.println("<h3>你输入的密码是:" + password + "</h3>");
+        } else {
+            writer.println("<h2>你没有给定请求参数password</h2>");
+        }
+//        writer.println("欢迎学习Servlet!");
         //
         writer.close();
     }
