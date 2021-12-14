@@ -1,4 +1,4 @@
-package com.kclm.web.servlet;
+package com.kclm.web.servlet.day1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
